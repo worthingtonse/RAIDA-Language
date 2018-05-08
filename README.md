@@ -9,12 +9,15 @@ The root folder is Lib. Then there are other folders such as Util,System, etc.
 ### Classes
 Classes. RAIDA language classes are know by their file names. Each class has its own file. 
 ```
-die.raida
+die.class
+die.abstract
+die.enum
+die.interface
 
 ```
 ### Junctions
 
-### Services
+### Global
 
 ### GUIs 
 
@@ -23,7 +26,7 @@ die.raida
 
 ### Class parts
 Each class has three parts seperated by "-------------"
-
+```
 Unique Identifier (Assigned at run time)
 ------------
 fields
@@ -34,19 +37,27 @@ constructors
 ------------
 methods
 ------------
-
-
+services
+------------
+gui
+```
 
 
 ## Primitive Types
 
-### Integers:
+### Default Integers:
 #a = 10 //default Signed 4 byte integer. 
-G# = 10 //Global Integer
+
+global.a# = 10 //Global Integer
+
 output #a
+
+### Advanced Integers
 Advanced Integers have the # sign and Byte Lenght befor the name
-#a = +4byte; //Unsigned four byte integer
-#b = -1byte; //Signed one byte integer. 
+
+#a +4byte //Unsigned four byte integer
+
+#b -1byte //Signed one byte integer. 
 
 ### Decimals
 #.a = 10.4 //Simiple 
