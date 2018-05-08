@@ -9,11 +9,17 @@ The root folder is Lib. Then there are other folders such as Util,System, etc.
 ### Classes
 Classes. RAIDA language classes are know by their file names. Each class has its own file. 
 ```
-die.class
-die.abstract
-die.enum
-die.interface
+programName.dm //the DM (Dungeon Master) main program that auto starts
+die.class //for normal classes
+die.abstract //abstract class
+die.enum //enumerator
+die.interface //Interface
+die.global //Creates classes, variables and methods that will be available to all classes. 
 
+gui.console
+gui.web
+gui.window
+gui.iPhone
 ```
 ### Junctions
 
@@ -39,7 +45,29 @@ methods
 ------------
 services
 ------------
-gui
+gui aspects
+------------
+Aspects Used for Global stuff
+```
+## Sample Class called Die (like a dice)
+
+```
+Up here it is all notes.
+You can write what you want. 
+-uid--------------------
+#id +4byte
+-fields------------------
+#sides +1byte //Number of sides the dice has
+#sideUp +1byte //The side the is facing up
+-constructors-----------------------
+()
+#sides = 6;
+#sideUp = 1
+
+
+-
+
+
 ```
 
 
