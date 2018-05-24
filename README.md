@@ -6,11 +6,11 @@ Name spaces are held in folder names.
 The root folder is Lib. Then there are other folders such as Util,System, etc. 
 
 
-### Classes
-Classes. RAIDA language classes are know by their file names. Each class has its own file. 
+### Entities
+Entites. RAIDA language classes are know by their file names and have an "Entites" extension. Each entity has its own file. 
 ```
 programName.dm //the DM (Dungeon Master) main program that auto starts
-die.class //for normal classes
+die.entity //for normal classes
 die.abstract //abstract class
 die.enum //enumerator
 die.interface //Interface
@@ -30,12 +30,14 @@ gui.iPhone
 
 
 
-### Class parts
-Each class has three parts seperated by "-------------"
+### Entity parts
+Each Entity has parts seperated by "-------------"
 ```
+Rights
+--------------
 Unique Identifier (Assigned at run time)
 ------------
-fields
+Properties
 ------------
 Foreign Keys
 ------------
@@ -43,7 +45,7 @@ constructors
 ------------
 methods
 ------------
-services
+Communication
 ------------
 gui aspects
 ------------
@@ -52,13 +54,28 @@ Aspects Used for Global stuff
 ## Sample Class called Die (like a dice)
 
 ```
+-About----------------
 Up here it is all notes.
 You can write what you want. 
+-RIGHTS
+*Persistant
+*Gui
+*Enrypted
+*Static
+*
+
 -uid--------------------
 #id +4byte
 -fields------------------
-#sides +1byte //Number of sides the dice has
+#sides +1byte { *NOT NULL, !UNIQUE, !PRIMARY KEY, *DEFAULT:10, *INDEX }//Number of sides the dice has
 #sideUp +1byte //The side the is facing up
+NOT NULL - Ensures that a column cannot have a NULL value
+UNIQUE - Ensures that all values in a column are different
+PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table
+FOREIGN KEY - Uniquely identifies a row/record in another table
+CHECK - Ensures that all values in a column satisfies a specific condition
+DEFAULT - Sets a default value for a column when no value is specified
+INDEX - Used to create and retrieve data from the database very quickly
 -constructors-----------------------
 ()
 #sides = 6;
@@ -91,13 +108,13 @@ Advanced Integers have the # sign and Byte Lenght befor the name
 #.a = 10.4 //Simiple 
 
 ### Boolean
-?a = true
+?a = true //
 
 ### Text
-$a =  yea!
+$a =yea!//
 
 ### Type Conversions: 
-$a = 43
+$a = 43//
 VERT: #a to $a FAIL: GOTO ^here
 V: #a to $a F: GOTO ^here
 
@@ -113,6 +130,33 @@ Variables can start with letters or numbers. No spaces or other characters
 
 if(){}
 M:
+
+## Text
+
+### Escape 
+
+To escape, simply put some angle brackets around it:
+
+p( The value of the variable <#>a is now #a )//prints: " The value of the variable #a is now 15 "
+
+### Concatination
+
+$fullName =Sean H. Worthington//
+$myString =What the hell are you writing about $fullName?
+
+### conatination with white space
+
+$emailToCustomer=
+
+The wite space is now recording.
+It will now include character returns and 
+  tabs like that one
+  
+  And empty lines like the one above.//
+  
+  
+### Ignoring all   
+
 
 
 
