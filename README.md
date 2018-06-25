@@ -6,20 +6,24 @@ Name spaces are held in folder names.
 The root folder is Lib. Then there are other folders such as Util,System, etc. 
 
 
-### Entities
-Entites. RAIDA language classes are know by their file names and have an "Entites" extension. Each entity has its own file. 
+### Class
+Classes. RAIDA language classes are know by their file names and have an "class" extension. Each class has its own file. 
+However, there are other componets besides classes including, main, entity, abstract, enum, interface, and global. 
+There are also files called "bus" files that allow other classes to monitor and discover. 
+Gui files allow the code to be displayed in certain GUIs.  
 ```
-programName.dm //the DM (Dungeon Master) main program that auto starts
-die.entity //for normal classes
-die.abstract //abstract class
-die.enum //enumerator
-die.interface //Interface
-die.global //Creates classes, variables and methods that will be available to all classes. 
-
-gui.console
-gui.web
-gui.window
-gui.iPhone
+programName.main //the DM (Dungeon Master) main program that auto starts
+Car.class //for normal classes
+Person.entity //for normal classes
+Vehicle.abstract //abstract class
+DaysOfWeek.enum //enumerator
+Agreement.interface //Interface
+Config.global //Creates classes, variables and methods that will be available to all classes. 
+Gui.bus //Allows classes to fee information and recieve intformation from other classes
+console.gui
+web.gui
+windows.gui
+iPhone.gui
 ```
 ### Junctions
 
