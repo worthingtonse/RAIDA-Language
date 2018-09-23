@@ -1,10 +1,42 @@
 # RAIDA-Language
 
+### case insensitve
+In this language, case does not matter. 
+
+### Program Name
+The name of the program is the name of the folder that holds all the class fies. This assumes that there is a main executale file.
+If not then the folder name is just part of the name space.  
+
 
 ### Name Spaces
-Name spaces are held in folder names. 
-The root folder is Lib. Then there are other folders such as Util,System, etc. 
+Name spaces are held in folder names that don't and may or may not include a main program
 
+### Types of files in a program:
+.class //for classes
+
+.enum //for enumerators
+
+.row //for data structures like a row in a table This may also be called entity
+
+.icon //for the graphics of a program
+
+.pk //the signature of a program
+
+.main //code that will start the execution
+
+.global  //For static global variables
+
+.config  //any configuration
+
+.test //Code that tests other classes
+
+.abstract // abstract class
+
+.interface //rules for connecting classes
+
+.bus //communications code allowing code to talk to each other. 
+
+.gui //Specifice handles to allow the program to communicate in different ways. 
 
 ### Class
 Classes. RAIDA language classes are know by their file names and have an "class" extension. Each class has its own file. 
@@ -24,6 +56,8 @@ console.gui
 web.gui
 windows.gui
 iPhone.gui
+Signature.pk
+graphic.icon
 ```
 ### Junctions
 
@@ -61,6 +95,7 @@ Aspects Used for Global stuff
 -About----------------
 Up here it is all notes.
 You can write what you want. 
+
 -RIGHTS
 *Persistant
 *Gui
@@ -68,25 +103,22 @@ You can write what you want.
 *Static
 *
 
--uid--------------------
-#id +4byte
 -fields------------------
-#sides +1byte { *NOT NULL, !UNIQUE, !PRIMARY KEY, *DEFAULT:10, *INDEX }//Number of sides the dice has
-#sideUp +1byte //The side the is facing up
-NOT NULL - Ensures that a column cannot have a NULL value
-UNIQUE - Ensures that all values in a column are different
-PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table
-FOREIGN KEY - Uniquely identifies a row/record in another table
-CHECK - Ensures that all values in a column satisfies a specific condition
-DEFAULT - Sets a default value for a column when no value is specified
-INDEX - Used to create and retrieve data from the database very quickly
--constructors-----------------------
-()
-#sides = 6;
-#sideUp = 1
+#sides //Number of sides the dice has
+#sideUp //The side the is facing up
 
+-constructor_1( @#sides, p#b)
+{
+   #sides is p#sides;
+   #sideUp is p#up
+}//end Constructor_1
 
--
+-Methods
+*add( p#FirstNumber p#SecondNumber)
+{ 
+  *random = random(10,20)
+  return p#FirstNumber + p#SecondNumber
+}*add
 
 
 ```
@@ -95,30 +127,25 @@ INDEX - Used to create and retrieve data from the database very quickly
 ## Primitive Types
 
 ### Default Integers:
-#a = 10 //default Signed 4 byte integer. 
+#age is 10 ;12 byte double that can handle almost any computation 
+#height is 2.4
+#duration is .09998883
 
-global.a# = 10 //Global Integer
-
-output #a
-
-### Advanced Integers
-Advanced Integers have the # sign and Byte Lenght befor the name
-
-#a +4byte //Unsigned four byte integer
-
-#b -1byte //Signed one byte integer. 
-
-### Decimals
-#.a = 10.4 //Simiple 
+global.#age = 10 ; Global Integer
 
 ### Boolean
-?a = true //
+?oldEnough is true ;
 
-### Text
-$a =yea!//
+### Text is an array of unicode characters and can be char or string
+$firstName is Billy ;
 
 ### Type Conversions: 
-$a = 43//
+$age is 43//
+#age from $age Fail{"Sorry fucker"}
+$age from #age
+$oldEnough from ?oldEnough
+?oldEnough from $oldEnough
+
 VERT: #a to $a FAIL: GOTO ^here
 V: #a to $a F: GOTO ^here
 
