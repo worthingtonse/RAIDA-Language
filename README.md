@@ -127,12 +127,13 @@ You can write what you want.
 ## Primitive Types
 
 ### Default Integers:
-#age is 10 ;12 byte double that can handle almost any computation 
+```
+#age is 10 ;  12 byte double that can handle almost any computation 
 #height is 2.4
 #duration is .09998883
 
 global.#age = 10 ; Global Integer
-
+```
 ### Boolean
 ?oldEnough is true ;
 
